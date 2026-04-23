@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Mail, Github, Linkedin, Database, BarChart3, Activity, Code, Terminal, ChevronRight } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 import ThreeBackground from './components/ThreeBackground';
 import SkillViz from './components/SkillViz';
 import ProjectCard from './components/ProjectCard';
@@ -244,6 +245,7 @@ export default function App() {
           </div>
         </footer>
       </main>
+      <Analytics />
     </div>
   );
 }
