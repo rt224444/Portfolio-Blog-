@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-data-bg: #050508;
+  --color-data-accent: #22d3ee;
+  --color-data-accent-glow: rgba(34, 211, 238, 0.4);
+}
+
+@layer base {
+  body {
+    @apply bg-data-bg text-slate-200 font-sans antialiased;
+  }
+}
+
+.bg-atmosphere {
+  background: 
+    radial-gradient(circle at 80% 20%, #1e1b4b 0%, transparent 40%),
+    radial-gradient(circle at 10% 80%, #0f172a 0%, transparent 50%);
+}
+
+.neo-accent {
+  @apply text-cyan-400;
+  text-shadow: 0 0 15px var(--color-data-accent-glow);
+}
+
+.grid-bg {
+  background-image: 
+    linear-gradient(rgba(34, 211, 238, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.glass-panel {
+  @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-2xl transition-all duration-300;
+}
+
+.viz-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.viz-card {
+  transform: rotateY(-15deg) rotateX(5deg);
+  @apply transition-transform hover:rotate-0 duration-500;
+}
+
